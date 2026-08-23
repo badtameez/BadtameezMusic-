@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Disallow: /admin
+Disallow: /api/admin/
+Disallow: /server/
+
+Sitemap: https://badtameezmusic.com/sitemap.xml

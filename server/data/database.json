@@ -1,0 +1,514 @@
+{
+  "admin": {
+    "username": "admin",
+    "passwordHash": "$2a$10$BSPMUgTVqULEVz7neZmNlevlfMyzYAnNZEyWTHdixJT0HVE0YAyfq",
+    "email": "shayrana.in@gmail.com",
+    "lastLogin": "2026-08-23T15:46:33.073Z"
+  },
+  "hero": {
+    "artistName": "Mahaveer Jain",
+    "brandName": "BADTAMEEZ",
+    "brandSub": "Badtameez Music",
+    "statusPill": "Software Developer (7+ Yrs) · Lyricist · Songwriter · Mahaveer Jain",
+    "descriptor": "Software Developer · Lyricist · Songwriter · Poet · Visual Artist · Video Editor",
+    "quoteHindi": "naram dil, garam alfaaz,\nbas yahi hai apna andaaz!",
+    "quoteEnglish": "Tender heart, fiery words — this alone is my signature style.",
+    "ctaPrimary": {
+      "text": "Explore Tech & Skills",
+      "link": "#engineer"
+    },
+    "ctaSecondary": {
+      "text": "Listen to Original Songs",
+      "link": "#music"
+    }
+  },
+  "tech": {
+    "experienceYears": "7+",
+    "experienceLabel": "Years Software Development Experience",
+    "stats": [
+      {
+        "number": "7+",
+        "label": "Years Software Development Experience"
+      },
+      {
+        "number": "Enterprise",
+        "label": "Scale Systems (RSMML & RIICO)"
+      },
+      {
+        "number": "Full-Stack",
+        "label": "C# · ASP.NET · React · Blazor · SQL"
+      },
+      {
+        "number": "AI-Native",
+        "label": "Claude · Antigravity · Codex · ChatGPT"
+      }
+    ],
+    "skills": {
+      "frameworks_languages": [
+        "⚡ C#",
+        "⚡ ASP.Net",
+        "⚛️ ReactJS",
+        "🔥 Blazor",
+        "🌐 HTML5",
+        "🎨 CSS3",
+        "📜 JavaScript (ES6+)",
+        "🧩 jQuery"
+      ],
+      "databases": [
+        "🗄️ IBM DB2",
+        "🗃️ Microsoft SQL Server",
+        "⚙️ T-SQL & Stored Procedures",
+        "📊 High-Performance Queries",
+        "🔒 Data Modeling & Integrity"
+      ],
+      "ides_tools": [
+        "💻 Visual Studio",
+        "💻 VS Code",
+        "🚀 Antigravity IDE",
+        "📦 Git & Version Control"
+      ],
+      "ai_tools": [
+        "✨ Claude (Anthropic)",
+        "✨ Antigravity 2.0",
+        "✨ OpenAI Codex",
+        "✨ ChatGPT",
+        "✨ RouteCode",
+        "🤖 AI-Assisted Architecture"
+      ]
+    },
+    "enterpriseProjects": [
+      {
+        "id": 1,
+        "name": "RSMML",
+        "fullName": "Rajasthan State Mines and Minerals Limited",
+        "category": "State Enterprise Architecture",
+        "description": "Engineered robust enterprise software solutions, mission-critical database operations, resource management systems, and high-reliability data integrity workflows for one of the premier mining and mineral state enterprises in India.",
+        "techStack": [
+          "C#",
+          "ASP.Net",
+          "IBM DB2",
+          "SQL Server",
+          "Enterprise Architecture"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "RIICO",
+        "fullName": "Rajasthan State Industrial Development & Investment Corp.",
+        "category": "Industrial Infrastructure Platform",
+        "description": "Developed and maintained large-scale industrial infrastructure platforms, land allotment management systems, digital service modules, and high-concurrency database workflows empowering industrial operations across Rajasthan.",
+        "techStack": [
+          "ASP.Net",
+          "ReactJS",
+          "SQL Server",
+          "JavaScript / jQuery",
+          "Database Optimization"
+        ]
+      }
+    ]
+  },
+  "about": {
+    "leadText": "“I exist in the quiet space where the heartbeat of a poem meets the mathematical harmony of sound, and the precision of code breathes life into art.”",
+    "paragraphs": [
+      "With 7+ years of architecting software systems as Mahaveer Jain, creation is a seamless continuum. When midnight arrives, the fountain pen inks raw emotions into Hindi and Urdu couplets. Those words naturally demand a melody, turning into songs, acoustic riffs, and Sufi undertones.",
+      "The song then begs for a visual universe — leading to custom album artwork, typography posters, and cinematic video edits under Badtameez Music. And underneath it all, the engineering mind builds the systems, audio DSP tools, and software architectures that empower these digital experiences."
+    ],
+    "philosophyQuote": "“Fann (art) is the destination; technology is the vessel that sails the uncharted sea.”",
+    "pillars": [
+      {
+        "id": "kalam",
+        "title": "Kalam (The Pen)",
+        "description": "Raw shayari, poignant lyrics, metaphors, and unadulterated emotion written from the heart."
+      },
+      {
+        "id": "dhun",
+        "title": "Dhun (The Melodies)",
+        "description": "Original compositions blending contemporary acoustic warmth with evocative Sufi & ghazal sensibilities."
+      },
+      {
+        "id": "aks",
+        "title": "Aks (Visual Storytelling)",
+        "description": "Album art design, typography prints, video direction, motion aesthetics, and color grading."
+      },
+      {
+        "id": "nizaam",
+        "title": "Nizaam (Code & Tech)",
+        "description": "7+ years of software development in C#, ASP.NET, React, DB2, SQL, and AI toolchains."
+      }
+    ]
+  },
+  "songs": [
+    {
+      "id": 1,
+      "title": "1. Shodh",
+      "subtitle": "Original Philosophical Rap · Mahaveer Jain",
+      "genre": "Philosophical Poetry & Rap",
+      "duration": "03:24",
+      "durationSec": 204,
+      "artwork": "assets/images/song-shodh.jpg",
+      "availability": "youtube",
+      "youtubeId": "bv7Ve8PqPJc",
+      "youtubeUrl": "https://youtu.be/bv7Ve8PqPJc?si=-r8NfXKP18qP54UW",
+      "spotifyId": "",
+      "spotifyUrl": "",
+      "isFeatured": true,
+      "description": "A profound poetic search into identity, truth, existence, and the restless human spirit.",
+      "lyrics": "[Shodh — Lyrics by Mahaveer Jain]\n\nTalaash khud ki, talaash sach ki,\nKagaz pe behti hui ek aanch ki.\nDuniya ki bheed mein khoya nahi main,\nDard mila par soya nahi main.\n\n[Chorus]\nYeh shodh hai rooh ka, alfaaz ka,\nYeh shodh hai dil ke har raaz ka.\nNaram dil, garam alfaaz,\nBas yahi hai apna andaaz!\n\n[Outro]\nLakeeron se aage jahaan apna hoga,\nHar lafz mein sach ka sapna hoga."
+    },
+    {
+      "id": 2,
+      "title": "2. Tajurbe ft. Sanju",
+      "subtitle": "Hip-Hop Collaboration",
+      "genre": "Hip-Hop / Wordplay Collab",
+      "duration": "03:10",
+      "durationSec": 190,
+      "artwork": "assets/images/song-tajurbe.jpg",
+      "availability": "youtube",
+      "youtubeId": "HOwq_W8CinY",
+      "youtubeUrl": "https://youtu.be/HOwq_W8CinY?si=I1yI6ULAB7ByG7vZ",
+      "spotifyId": "",
+      "spotifyUrl": "",
+      "isFeatured": false,
+      "description": "Experiences forged in fire. Hard-hitting rhymes and street-smart wisdom.",
+      "lyrics": ""
+    },
+    {
+      "id": 3,
+      "title": "3. Jaisa meri maa chahti hain",
+      "subtitle": "Heartfelt Emotional Spoken Rap",
+      "genre": "Emotional / Mother Tribute",
+      "duration": "03:45",
+      "durationSec": 225,
+      "artwork": "assets/images/song-jaisa-meri-maa.jpg",
+      "availability": "youtube",
+      "youtubeId": "bT2K5c-McCQ",
+      "youtubeUrl": "https://youtu.be/bT2K5c-McCQ?si=IorBnfuh-lvWpjpO",
+      "spotifyId": "",
+      "spotifyUrl": "",
+      "isFeatured": false,
+      "description": "An emotional and intimate ode dedicated to a mother's dreams and maternal blessings.",
+      "lyrics": ""
+    },
+    {
+      "id": 4,
+      "title": "4. Khwaabo mein",
+      "subtitle": "Official Single · Spotify Release",
+      "genre": "Soulful Dream Pop · Naram Dil",
+      "duration": "03:12",
+      "durationSec": 192,
+      "artwork": "assets/images/khwaabo-mein-spotify.jpg",
+      "availability": "spotify",
+      "youtubeId": "",
+      "youtubeUrl": "",
+      "spotifyId": "4CtsdqgQhuUVv4SFxA3cI8",
+      "spotifyUrl": "https://open.spotify.com/track/4CtsdqgQhuUVv4SFxA3cI8?si=ab2e3d1f35c241ab",
+      "isFeatured": true,
+      "description": "Drifting through nostalgic midnight reveries and unspoken romantic connections.",
+      "lyrics": ""
+    },
+    {
+      "id": 5,
+      "title": "5. Thaam Lo",
+      "subtitle": "Soulful Ballad · Spotify Release",
+      "genre": "Acoustic Romantic Ballad",
+      "duration": "03:28",
+      "durationSec": 208,
+      "artwork": "assets/images/khwaabo-mein-spotify.jpg",
+      "availability": "spotify",
+      "youtubeId": "",
+      "youtubeUrl": "",
+      "spotifyId": "2fxy3twNKXZHKcq3paNCTx",
+      "spotifyUrl": "https://open.spotify.com/track/2fxy3twNKXZHKcq3paNCTx?si=3454d921d62542e8",
+      "isFeatured": false,
+      "description": "A tender plea for intimacy, togetherness, and holding on through turbulent tides.",
+      "lyrics": ""
+    },
+    {
+      "id": 6,
+      "title": "6. Aao Naa",
+      "subtitle": "Soulful Romantic Ballad",
+      "genre": "Soulful Romance · Naram Dil",
+      "duration": "03:35",
+      "durationSec": 215,
+      "artwork": "assets/images/song-aao-naa.jpg",
+      "availability": "both",
+      "youtubeId": "QCf7O4lZgGU",
+      "youtubeUrl": "https://youtu.be/QCf7O4lZgGU?si=dZPQdhgYngkk6wz1",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Aao%20Naa%20Mahaveer",
+      "isFeatured": true,
+      "description": "An intimate and tender melodic poetry capturing the depth of romantic longing.",
+      "lyrics": "[Aao Naa — Lyrics by Mahaveer Jain]\n\nKhamosh shaam hai, thehri hawa,\nTeri kami ki bas yahi hai saza.\nAankhon mein khwaab hain tere sanam,\nDhadkan mein gholein ek meethi dawa.\n\n[Chorus]\nAao naa, paas aao naa,\nDil ki yeh pyaas mitao naa.\nNaram dil, garam alfaaz,\nBas yahi hai apna andaaz!\n\n[Verse 2]\nKagaz pe likh diya tera hi naam,\nHar subah teri hai, teri har shaam.\nDo pal jo thehro mere rubaru,\nMil jaaye meri rooh ko aaraam."
+    },
+    {
+      "id": 7,
+      "title": "7. Dhoondhta Hoon",
+      "subtitle": "Introspective Hip-Hop",
+      "genre": "Introspective Melodic Rap",
+      "duration": "03:18",
+      "durationSec": 198,
+      "artwork": "assets/images/song-dhoondhta-hoon.jpg",
+      "availability": "both",
+      "youtubeId": "HuJdIu453u4",
+      "youtubeUrl": "https://youtu.be/HuJdIu453u4?si=JjEGGpdz-PvmtHPg",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Dhoondhta%20Hoon%20Mahaveer",
+      "isFeatured": false,
+      "description": "Searching for meaning and serenity amidst the relentless noise of modern existence.",
+      "lyrics": ""
+    },
+    {
+      "id": 8,
+      "title": "8. Unstable",
+      "subtitle": "Alternative Hip-Hop",
+      "genre": "Alternative Dark Rap",
+      "duration": "02:54",
+      "durationSec": 174,
+      "artwork": "assets/images/song-unstable.jpg",
+      "availability": "both",
+      "youtubeId": "1WXY_4yWrwQ",
+      "youtubeUrl": "https://youtu.be/1WXY_4yWrwQ?si=upbFRevkG9FkftcK",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Unstable%20Mahaveer",
+      "isFeatured": false,
+      "description": "Raw vulnerability confronting chaos, inner turbulence, and psychological balance.",
+      "lyrics": ""
+    },
+    {
+      "id": 9,
+      "title": "9. Teri Kasam",
+      "subtitle": "Acoustic Romantic Melodies",
+      "genre": "Contemporary Romance",
+      "duration": "03:40",
+      "durationSec": 220,
+      "artwork": "assets/images/song-teri-kasam.jpg",
+      "availability": "both",
+      "youtubeId": "JX--i9FWslU",
+      "youtubeUrl": "https://youtu.be/JX--i9FWslU?si=2mDAA2SCP1PDoUsb",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Teri%20Kasam%20Mahaveer",
+      "isFeatured": false,
+      "description": "Sacred promises, gentle melodies, and unwavering commitment of love.",
+      "lyrics": ""
+    },
+    {
+      "id": 10,
+      "title": "10. Shiv-Shiv",
+      "subtitle": "Devotional Cosmic Energy",
+      "genre": "Spiritual / Devotional Fusion",
+      "duration": "03:48",
+      "durationSec": 228,
+      "artwork": "assets/images/song-shiv-shiv.jpg",
+      "availability": "both",
+      "youtubeId": "6HV8Dp8NAaI",
+      "youtubeUrl": "https://youtu.be/6HV8Dp8NAaI?si=nLCVc0WrrHyA6R9m",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Shiv-Shiv%20Mahaveer",
+      "isFeatured": false,
+      "description": "A powerful ode to the cosmic dancer, vibrating with transcendental chants and divine devotion.",
+      "lyrics": "[Shiv-Shiv — Lyrics by Mahaveer Jain]\n\nDam dam damroo baaje re,\nGale mein naag biraaje re.\nNeelkanth Mahadev trikaal,\nKarta sabka kalyan re.\n\n[Chorus]\nShiv-Shiv, Har-Har Bhole,\nMan ka har ek bandhan khole.\nNaram dil, garam alfaaz,\nBas yahi hai apna andaaz!\n\n[Stanza]\nKailash pati, shambhu avinaashi,\nGoonjti hai jinki dhun Kashi.\nBhakti ki dhaar mein beh jaaye mann,\nPaawan ho jaaye yeh jeevan-dhan."
+    },
+    {
+      "id": 11,
+      "title": "11. Kaalia Freestyle",
+      "subtitle": "Raw Flow & Aggressive Wordplay",
+      "genre": "Freestyle Hip-Hop · Garam Alfaaz",
+      "duration": "02:50",
+      "durationSec": 170,
+      "artwork": "assets/images/kaalia-freestyle-spotify.jpg",
+      "availability": "both",
+      "youtubeId": "oG0lLpc6FEk",
+      "youtubeUrl": "https://youtu.be/oG0lLpc6FEk?si=dpbX_2jraPPGm1--",
+      "spotifyId": "",
+      "spotifyUrl": "https://open.spotify.com/search/Kaalia%20Freestyle%20Mahaveer",
+      "isFeatured": true,
+      "description": "Unfiltered fire, fearless cadences, and raw lyricism. Mahaveer's 'garam alfaaz' in pure sonic form.",
+      "lyrics": "[Kaalia Freestyle — Lyrics by Mahaveer Jain]\n\nMic pe aate hi banti hai aag,\nKalam se likhte hain apna bura ya bhala bhag.\nNa dare kisi se, na jhuke kabhi,\nHar beat pe goonjti apni hi rag.\n\n[Chorus]\nKaalia flow, tezi se chalta,\nHar lafz yahaan aag sa jalta.\nNaram dil, garam alfaaz,\nBas yahi hai apna andaaz!\n\n[Verse 2]\nRhythm aur rhyme ka yeh kaisa fitoor,\nHar ek misra karta guroor ko choor.\nBadtameez Music ki apni hai dastaan,\nChhoo ke dikha do humara aasmaan!"
+    }
+  ],
+  "poetry": {
+    "categories": [
+      {
+        "id": "emotional",
+        "label": "Emotional"
+      },
+      {
+        "id": "motivational",
+        "label": "Motivational"
+      },
+      {
+        "id": "other",
+        "label": "Other"
+      },
+      {
+        "id": "love-romantic",
+        "label": "Love/Romantic"
+      }
+    ],
+    "written": [
+      {
+        "id": 1787498686107,
+        "category": "other",
+        "theme": "Inner Feelings",
+        "titleHindi": "क्या करूँ!",
+        "titleRoman": "Kya Karun!",
+        "linesHindi": "दर्द की दो दवा बहर का क्या करूँ!\nसाँसों में गुल रहा ज़हर का क्या करूँ!\n\nक़ैद लगती है इस शहर में साँस भी,\nलोग सब हैं बुरे शहर का क्या करूँ!\n\nये दवा है नहीं कर्ज़ हैं कोई तो,\nजान महँगी लगे असर का क्या करूँ!\n\nहर्फ़-दर-हर्फ़ जज़्बात लिखता हूँ मैं,\nकायदे इतने इस हुनर का क्या करूँ!",
+        "linesRoman": "Dard ki do dawa bahar ka kya karun!\nSaanson mein gul raha zehar ka kya karun!\n\nQaid lagti hai is shehar mein saans bhi,\nLog sab hain bure shehar ka kya karun!\n\nYe dawa hai nahi karz hain koi to,\nJaan mehngi lage asar ka kya karun!\n\nHarf-dar-harf jazbaat likhta hoon main,\nQaide itne is hunar ka kya karun!",
+        "englishMeaning": "",
+        "notes": ""
+      },
+      {
+        "id": 1787499336558,
+        "category": "emotional",
+        "theme": "Love",
+        "titleHindi": "किराया लगता हैं",
+        "titleRoman": "Kiraya lagta hain",
+        "linesHindi": "तुमने ही शायद ये आसमान सजाया लगता हैं।\nचाँद क्या मुझको हर एक तारा तेरा साया लगता हैं।\n\nकितना बुरा हैं, बचपन मे तो ऐसा नही था वो,\nदुनिया ने उसको शायद बहुत सताया लगता हैं।\n\nदूर बहुत है शहर तेरा मेरे शहर से मेरी जान,\nजेब मेरी खाली और काफी किराया लगता हैं।",
+        "linesRoman": "Tumne hi shayad ye aasman sajaya lagta hai.\nChaand kya mujhko har ek taara tera saaya lagta hai.\n\nKitna bura hai, bachpan me to aisa nahi tha wo,\nDuniya ne usko shayad bahut sataya lagta hai.\n\nDoor bahut hai shehar tera mere shehar se meri jaan,\nJeb meri khaali aur kaafi kiraya lagta hai.",
+        "englishMeaning": "",
+        "notes": ""
+      },
+      {
+        "id": 1787499487037,
+        "category": "motivational",
+        "theme": "Ghazal",
+        "titleHindi": "छुपके-छुपके",
+        "titleRoman": "Chhupke-Chhupke",
+        "linesHindi": "ख़ुद ही को जो परखते है छुपके-छुपके।\nरोने वाले भी हँसते है छुपके-छुपके।\n\nवक़्त ले आता हैं फ़ासले जिनके दरमियाँ,\nअनजाने में बिछड़ते है छुपके-छुपके।\n\nजो हँसकर मिलते है रकीब से अपने,\nशब-भर आहे भरते है छुपके-छूपके।\n\nजिन बीजो को मिलता नही कोई बागबां,\nवो कीचड़ में खिलते है छुपके-छूपके।",
+        "linesRoman": "Khud hi ko jo parakhte hai chhupke-chhupke.\nRone wale bhi hanste hai chhupke-chhupke.\n\nWaqt le aata hain faasle jinke darmiyan,\nAnjaane mein bichhadte hai chhupke-chhupke.\n\nJo hanskar milte hai rakeeb se apne,\nShab-bhar aahein bharte hai chhupke-chhupke.\n\nJin beejon ko milta nahi koi baagban,\nWo keechad mein khilte hai chhupke-chhupke.",
+        "englishMeaning": "",
+        "notes": ""
+      }
+    ],
+    "recitedVideos": [
+      {
+        "id": 1,
+        "title": "Fir tum aazaad ho",
+        "category": "Love",
+        "tag": "Love Poetry",
+        "youtubeId": "zqUkQ-wa0lE",
+        "youtubeUrl": "https://youtu.be/zqUkQ-wa0lE",
+        "thumbnail": "assets/images/poetry-fir-tum-aazaad-ho.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Open Mic Performance",
+        "category": "Live Stage Performance",
+        "tag": "Live Open Mic",
+        "youtubeId": "mwrjGE6xvEM",
+        "youtubeUrl": "https://youtu.be/mwrjGE6xvEM?si=RhgvEzikDgclA9_o",
+        "thumbnail": "assets/images/poetry-open-mic.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Aaine se gehra",
+        "category": "Ghazal",
+        "tag": "Philosophical",
+        "youtubeId": "ACdanOJ_SmA",
+        "youtubeUrl": "https://youtu.be/ACdanOJ_SmA?si=68ltSj7FgQdtH3-Y",
+        "thumbnail": "assets/images/poetry-aaine-se-gehra.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Ek hasin sham",
+        "category": "Soulful Spoken Word",
+        "tag": "Romantic Nazm",
+        "youtubeId": "u28g2CnxrW8",
+        "youtubeUrl": "https://youtu.be/u28g2CnxrW8?si=Emw34RDxe9bqhQgP",
+        "thumbnail": "assets/images/poetry-ek-hasin-sham.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Aankhe khol lo",
+        "category": "Protest Poetry",
+        "tag": "Motivational",
+        "youtubeId": "NGK_6OMi7v0",
+        "youtubeUrl": "https://youtube.com/shorts/NGK_6OMi7v0?si=_IOowi4NLbWVl4W6",
+        "thumbnail": "assets/images/poetry-aankhe-khol-lo.jpg"
+      }
+    ]
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Shodh — Official Cover",
+      "category": "album-art",
+      "categoryLabel": "Original Release Artwork",
+      "note": "Philosophical rap & poetry single by Mahaveer Jain.",
+      "image": "assets/images/song-shodh.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Kaalia Freestyle — Official Cover",
+      "category": "album-art",
+      "categoryLabel": "Original Release Artwork",
+      "note": "Raw energy freestyle single with unapologetic wordplay.",
+      "image": "assets/images/kaalia-freestyle-spotify.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Aao Naa — Official Cover",
+      "category": "album-art",
+      "categoryLabel": "Original Release Artwork",
+      "note": "Soulful romantic ballad and melodic poetry artwork.",
+      "image": "assets/images/song-aao-naa.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Khwaabo Mein — Official Cover",
+      "category": "album-art",
+      "categoryLabel": "Official Spotify Artwork",
+      "note": "Soulful contemporary pop single artwork.",
+      "image": "assets/images/khwaabo-mein-spotify.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Shiv-Shiv — Cosmic Energy",
+      "category": "album-art",
+      "categoryLabel": "Original Release Artwork",
+      "note": "Spiritual cosmic tribute to Mahadev with sacred vibrations.",
+      "image": "assets/images/song-shiv-shiv.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Dhoondhta Hoon — Official Cover",
+      "category": "album-art",
+      "categoryLabel": "Original Release Artwork",
+      "note": "Introspective hip-hop single artwork.",
+      "image": "assets/images/song-dhoondhta-hoon.jpg"
+    }
+  ],
+  "socials": {
+    "instagram": "https://www.instagram.com/badtameezmusic/",
+    "youtube": "https://www.youtube.com/@badtameezmusic",
+    "spotify": "https://open.spotify.com/artist/1DCxj2PCxSFvrS4kfbjADf?si=uK6RY4Q_RFWZnQ63cMhdLA",
+    "github": "https://github.com"
+  },
+  "settings": {
+    "siteTitle": "Mahaveer Jain — Software Developer · Lyricist · Songwriter · Badtameez",
+    "seoDescription": "Official creative workspace of Mahaveer Jain (@BadtameezMusic). Senior Software Developer with 7+ years of experience in C#, ASP.Net, ReactJS, Blazor, SQL, DB2, and AI tooling. Lyricist, Songwriter, Poet, and Visual Artist. “naram dil, garam alfaaz, bas yahi hai apna andaaz!”",
+    "logoImage": "assets/images/website-logo.png",
+    "ambientSoundEnabled": true,
+    "ambientAudioFile": ""
+  },
+  "messages": [
+    {
+      "id": 1787502645226,
+      "name": "Test",
+      "email": "123@gmail.com",
+      "service": "collab",
+      "message": "test",
+      "timestamp": "2026-08-23T16:30:45.226Z",
+      "isRead": false
+    },
+    {
+      "id": 1787502504088,
+      "name": "System Test Verification",
+      "email": "shayrana.in@gmail.com",
+      "service": "collab",
+      "message": "Test message to verify Cloud MongoDB persistence and Nodemailer email delivery to shayrana.in@gmail.com.",
+      "timestamp": "2026-08-23T16:28:24.088Z",
+      "isRead": false
+    }
+  ]
+}

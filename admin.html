@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Badtameez — Content Management Portal & Admin Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Admin Styles -->
+  <link rel="stylesheet" href="css/admin.css?v=2.0">
+  <link rel="icon" type="image/png" href="assets/images/website-logo.png">
+</head>
+<body>
+
+  <div class="admin-bg-atmosphere" aria-hidden="true"></div>
+
+  <!-- 1. Authentication Screen Gate -->
+  <div class="admin-auth-screen" id="adminAuthScreen">
+    <div class="auth-card">
+      <div class="auth-logo-wrap">
+        <img src="assets/images/website-logo.png" alt="Badtameez Logo" class="auth-logo-img">
+        <span class="auth-brand-name">BADTAMEEZ</span>
+      </div>
+      <p class="auth-subtitle">Studio & Content Management Portal</p>
+
+      <form id="adminLoginForm">
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="loginUsername">Admin Username</label>
+          <input type="text" id="loginUsername" class="form-input" placeholder="admin" required autocomplete="username">
+        </div>
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-save" style="width: 100%; justify-content: center; margin-top: 1rem;">
+          <span>Enter Studio Dashboard</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Main Admin Portal Layout -->
+  <div class="admin-layout" id="adminMainLayout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <img src="assets/images/website-logo.png" alt="Badtameez Logo" class="sidebar-logo">
+        <span class="sidebar-title">BADTAMEEZ</span>
+      </div>
+
+      <ul class="sidebar-nav">
+        <li>
+          <button class="nav-item-btn active" data-tab="dashboard">
+            <span class="nav-item-icon">📊</span>
+            <span>Dashboard</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="hero">
+            <span class="nav-item-icon">⚡</span>
+            <span>Hero & Identity</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="tech">
+            <span class="nav-item-icon">💻</span>
+            <span>Tech & Skills</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="songs">
+            <span class="nav-item-icon">🎵</span>
+            <span>Songs & Discography</span>
+            <span class="nav-item-badge" id="badgeSongCount">11</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="poetry">
+            <span class="nav-item-icon">✍️</span>
+            <span>Poetry & Recitals</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="gallery">
+            <span class="nav-item-icon">🎨</span>
+            <span>Art & Visuals</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="about">
+            <span class="nav-item-icon">📖</span>
+            <span>About & Pillars</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="messages">
+            <span class="nav-item-icon">📬</span>
+            <span>Inquiries Inbox</span>
+            <span class="nav-item-badge" id="badgeMsgCount" style="background:#ef4444; color:#fff; display:none;">0</span>
+          </button>
+        </li>
+        <li>
+          <button class="nav-item-btn" data-tab="settings">
+            <span class="nav-item-icon">⚙️</span>
+            <span>Settings & Socials</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="/" target="_blank" class="btn-view-site">
+          <span>🌐 View Live Website</span>
+        </a>
+        <button class="btn-logout" id="adminLogoutBtn">
+          <span>🚪 Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="topbar-title-wrap">
+          <h2 id="topbarSectionTitle">Executive Overview</h2>
+          <p id="topbarSectionDesc">Real-time website metrics and control center</p>
+        </div>
+        <div class="topbar-actions">
+          <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-primary);" id="adminUserBadge">Logged in as: admin</span>
+        </div>
+      </header>
+
+      <div class="admin-content-body">
+        
+        <!-- TAB 1: DASHBOARD OVERVIEW -->
+        <section class="tab-view-content active" id="tab-dashboard">
+          <div class="dashboard-stats-grid">
+            <div class="dash-stat-box">
+              <div class="stat-box-icon">🎵</div>
+              <div>
+                <div class="stat-box-number" id="dashTotalSongs">11</div>
+                <div class="stat-box-label">Original Songs</div>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="stat-box-icon">✍️</div>
+              <div>
+                <div class="stat-box-number" id="dashTotalPoetry">6</div>
+                <div class="stat-box-label">Poetry Verses</div>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="stat-box-icon">🎙️</div>
+              <div>
+                <div class="stat-box-number" id="dashTotalRecitals">5</div>
+                <div class="stat-box-label">Video Recitals</div>
+              </div>
+            </div>
+            <div class="dash-stat-box">
+              <div class="stat-box-icon">📬</div>
+              <div>
+                <div class="stat-box-number" id="dashTotalInquiries">0</div>
+                <div class="stat-box-label">Inquiries Received</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Quick Studio Shortcuts</h3>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <button class="btn-add" onclick="window.adminApp.switchTab('songs'); window.adminApp.openSongModal();">+ Add New Song Release</button>
+              <button class="btn-add" onclick="window.adminApp.switchTab('poetry'); window.adminApp.openPoetryModal();">+ Add Poetry Verse</button>
+              <button class="btn-add" onclick="window.adminApp.switchTab('poetry'); window.adminApp.openRecitalModal();">+ Add Recited Video</button>
+              <button class="btn-add" onclick="window.adminApp.switchTab('gallery'); window.adminApp.openGalleryModal();">+ Add Art Artwork</button>
+              <button class="btn-add" onclick="window.adminApp.switchTab('tech');">+ Manage Tech Skills</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: HERO & BRAND IDENTITY -->
+        <section class="tab-view-content" id="tab-hero">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Hero Section & Artist Identity</h3>
+              <button class="btn-save" id="saveHeroBtn">Save Hero Changes</button>
+            </div>
+            <form id="heroForm">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Full Artist Name</label>
+                  <input type="text" id="heroArtistName" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Brand / Wordmark Name</label>
+                  <input type="text" id="heroBrandName" class="form-input" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Status Pill Text</label>
+                <input type="text" id="heroStatusPill" class="form-input">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Hero Descriptor Line</label>
+                <input type="text" id="heroDescriptor" class="form-input">
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Signature Quote (Hindi)</label>
+                  <textarea id="heroQuoteHindi" class="form-textarea" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Signature Quote (English Translation)</label>
+                  <textarea id="heroQuoteEnglish" class="form-textarea" rows="2"></textarea>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Primary CTA Button Text</label>
+                  <input type="text" id="heroCta1Text" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Secondary CTA Button Text</label>
+                  <input type="text" id="heroCta2Text" class="form-input">
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- TAB 3: TECH & SKILLS -->
+        <section class="tab-view-content" id="tab-tech">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Developer Experience & Skills</h3>
+              <button class="btn-save" id="saveTechBtn">Save Tech Changes</button>
+            </div>
+            <form id="techForm">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Years of Experience</label>
+                  <input type="text" id="techExpYears" class="form-input" placeholder="7+">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Experience Label</label>
+                  <input type="text" id="techExpLabel" class="form-input">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Frameworks & Languages (Comma separated)</label>
+                <textarea id="techFrameworks" class="form-textarea" placeholder="⚡ C#, ⚡ ASP.Net, ⚛️ ReactJS, 🔥 Blazor, 🌐 HTML5, 🎨 CSS3, 📜 JavaScript (ES6+), 🧩 jQuery"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Databases (Comma separated)</label>
+                <textarea id="techDatabases" class="form-textarea" placeholder="🗄️ IBM DB2, 🗃️ Microsoft SQL Server, ⚙️ T-SQL, 📊 High-Performance Queries"></textarea>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">IDEs & Environments (Comma separated)</label>
+                  <input type="text" id="techIdes" class="form-input" placeholder="💻 Visual Studio, 💻 VS Code, 🚀 Antigravity IDE, 📦 Git">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">AI Tooling (Comma separated)</label>
+                  <input type="text" id="techAiTools" class="form-input" placeholder="✨ Claude, ✨ Antigravity 2.0, ✨ Codex, ✨ ChatGPT, ✨ RouteCode">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Enterprise Projects Manager -->
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Featured Enterprise Projects</h3>
+              <button class="btn-add" id="addNewProjectBtn">+ Add Enterprise Project</button>
+            </div>
+            <div id="adminProjectsListContainer">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: SONGS & DISCOGRAPHY -->
+        <section class="tab-view-content" id="tab-songs">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Songs & Discography Manager</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Manage your releases, audio links, YouTube IDs, and Spotify tracks.</p>
+              </div>
+              <button class="btn-add" id="addNewSongBtn">+ Add New Song Release</button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Artwork</th>
+                    <th>Title & Subtitle</th>
+                    <th>Genre & Duration</th>
+                    <th>Platform</th>
+                    <th>Featured</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminSongsTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: POETRY & RECITALS -->
+        <section class="tab-view-content" id="tab-poetry">
+          <!-- Poetry Categories & Themes -->
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Poetry Categories & Filter Tabs</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Manage category buttons shown on the public poetry section</p>
+              </div>
+              <button class="btn-add" id="addNewPoetryCatBtn">+ Add New Category</button>
+            </div>
+            <div id="adminPoetryCategoriesList" style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Written Verses -->
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Written Poetry & Shayari (Kalam & Kagaz)</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Dual-language couplets in Hindi Devanagari & Romanized Hinglish</p>
+              </div>
+              <button class="btn-add" id="addNewPoetryBtn">+ Add Written Poem</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Title (Hindi / Roman)</th>
+                    <th>Category</th>
+                    <th>Verse Preview</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminPoetryTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Video Recitals -->
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Recited Poetry Videos & Open Mics</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">YouTube spoken word and live stage video recitals</p>
+              </div>
+              <button class="btn-add" id="addNewRecitalBtn">+ Add Recited Video</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Thumbnail</th>
+                    <th>Title</th>
+                    <th>Category Tag</th>
+                    <th>YouTube ID</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminRecitalsTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: ART & VISUAL GALLERY -->
+        <section class="tab-view-content" id="tab-gallery">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Art & Visual Creations Gallery</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Album cover artworks, typography prints, and visual designs</p>
+              </div>
+              <button class="btn-add" id="addNewGalleryBtn">+ Add Artwork</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Artwork</th>
+                    <th>Title</th>
+                    <th>Category Label</th>
+                    <th>Notes</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminGalleryTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 7: ABOUT & SOUL PILLARS -->
+        <section class="tab-view-content" id="tab-about">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">About Section Narrative</h3>
+              <button class="btn-save" id="saveAboutBtn">Save About Changes</button>
+            </div>
+            <form id="aboutForm">
+              <div class="form-group">
+                <label class="form-label">Lead Quote Text</label>
+                <textarea id="aboutLeadText" class="form-textarea" rows="2"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Paragraph 1</label>
+                <textarea id="aboutPara1" class="form-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Paragraph 2</label>
+                <textarea id="aboutPara2" class="form-textarea" rows="3"></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Philosophy Highlight</label>
+                <input type="text" id="aboutPhilosophy" class="form-input">
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- TAB 8: INQUIRIES INBOX -->
+        <section class="tab-view-content" id="tab-messages">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <div>
+                <h3 class="card-header-title">Visitor Inquiries & Collaborations</h3>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Messages submitted through the public website contact form</p>
+              </div>
+              <button class="btn-add" id="refreshMessagesBtn">🔄 Refresh Inbox</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Date / Time</th>
+                    <th>Sender Name</th>
+                    <th>Email</th>
+                    <th>Creative Intent</th>
+                    <th>Message</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminMessagesTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 9: SETTINGS & SOCIALS -->
+        <section class="tab-view-content" id="tab-settings">
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Social Media Redirection Links</h3>
+              <button class="btn-save" id="saveSocialsBtn">Save Social Links</button>
+            </div>
+            <form id="socialsForm">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Instagram Profile URL</label>
+                  <input type="url" id="socialInstagram" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">YouTube Channel URL</label>
+                  <input type="url" id="socialYoutube" class="form-input">
+                </div>
+              </div>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label">Spotify Artist URL</label>
+                  <input type="url" id="socialSpotify" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">GitHub URL</label>
+                  <input type="url" id="socialGithub" class="form-input">
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Password Change -->
+          <div class="admin-card">
+            <div class="card-header-bar">
+              <h3 class="card-header-title">Admin Account & Security</h3>
+            </div>
+            <form id="changePasswordForm" style="max-width: 480px;">
+              <div class="form-group">
+                <label class="form-label">Current Password</label>
+                <input type="password" id="currentPassInput" class="form-input" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">New Password (min 6 characters)</label>
+                <input type="password" id="newPassInput" class="form-input" required>
+              </div>
+              <button type="submit" class="btn-save">Change Password</button>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Universal Admin Form Modal -->
+  <div class="admin-modal-overlay" id="adminModalOverlay">
+    <div class="admin-modal-box">
+      <div class="modal-title-row">
+        <h3 id="adminModalTitle">Edit Item</h3>
+        <button class="btn-action-icon" id="adminModalCloseBtn" style="width: 32px; height: 32px;">✕</button>
+      </div>
+      <div id="adminModalBody">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="admin-toast" id="adminToast">
+    <span id="adminToastIcon">✨</span>
+    <span id="adminToastMsg">Changes saved successfully!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/admin.js?v=2.0"></script>
+</body>
+</html>
