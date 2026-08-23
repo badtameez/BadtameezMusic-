@@ -365,6 +365,10 @@ img {
   box-shadow: 0 0 12px var(--gold-glow);
 }
 
+.mobile-drawer-socials {
+  display: none;
+}
+
 /* Ambient Studio Sound Switch */
 .ambient-toggle-btn {
   display: inline-flex;
