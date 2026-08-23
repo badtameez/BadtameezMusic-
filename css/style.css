@@ -1173,27 +1173,45 @@ img {
 }
 
 .language-toggle-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(18, 16, 14, 0.8);
-  padding: 0.3rem 0.4rem;
+  background: rgba(14, 12, 10, 0.85);
+  padding: 4px;
   border-radius: var(--radius-full);
   border: 1px solid var(--glass-border);
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .lang-btn {
-  padding: 0.35rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.45rem 0.75rem;
   border-radius: var(--radius-full);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 500;
   color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
   transition: var(--transition-fast);
 }
 
+.lang-btn:hover {
+  color: var(--gold-light);
+}
+
 .lang-btn.active {
-  background: var(--sepia-dark);
-  color: var(--text-primary);
-  font-weight: 500;
+  background: var(--gold-primary);
+  color: #0c0a09;
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--gold-glow);
 }
 
 .poetry-grid {
@@ -2422,18 +2440,25 @@ img {
 
 /* Modal Language Switcher */
 .modal-lang-switcher {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   background: rgba(14, 12, 10, 0.9);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-full);
   padding: 4px;
-  gap: 4px;
-  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 1.5rem auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .modal-lang-btn {
-  padding: 0.4rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.45rem 0.75rem;
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 500;
@@ -2441,7 +2466,12 @@ img {
   background: none;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
   transition: var(--transition-fast);
+}
+
+.modal-lang-btn:hover {
+  color: var(--gold-light);
 }
 
 .modal-lang-btn.active {
