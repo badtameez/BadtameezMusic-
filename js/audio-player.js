@@ -309,7 +309,7 @@ class OfficialMusicEngine {
           id="ytPlayerIframe"
           width="100%" 
           height="100%" 
-          src="https://www.youtube.com/embed/${track.youtubeId}?autoplay=${autoPlay ? 1 : 0}&rel=0&modestbranding=1&enablejsapi=1&origin=${window.location.origin}" 
+          src="https://www.youtube.com/embed/${track.youtubeId}?autoplay=${autoPlay ? 1 : 0}&rel=0&playsinline=1" 
           title="${track.title} - Mahaveer Jain" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -684,7 +684,7 @@ window.openPoetryVideoModal = (youtubeId, title, category) => {
       <iframe 
         width="100%" 
         height="100%" 
-        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1" 
+        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&playsinline=1" 
         title="${title} - Mahaveer Jain" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 

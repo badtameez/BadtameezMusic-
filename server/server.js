@@ -26,16 +26,17 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "https://www.youtube.com", "https://s.ytimg.com"],
+        scriptSrc: ["'self'", "'unsafe-inline'", "https://www.youtube.com", "https://s.ytimg.com", "https://*.youtube.com"],
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-        imgSrc: ["'self'", "data:", "blob:", "https:", "http:"],
-        frameSrc: ["'self'", "https://www.youtube.com", "https://www.youtube-nocookie.com", "https://open.spotify.com"],
-        mediaSrc: ["'self'", "data:", "blob:"],
-        connectSrc: ["'self'", "https:"]
+        imgSrc: ["'self'", "data:", "blob:", "https:", "http:", "https://i.ytimg.com", "https://*.ytimg.com", "https://*.googleusercontent.com"],
+        frameSrc: ["'self'", "https://www.youtube.com", "https://www.youtube-nocookie.com", "https://*.youtube.com", "https://open.spotify.com"],
+        mediaSrc: ["'self'", "data:", "blob:", "https:"],
+        connectSrc: ["'self'", "https:", "https://*.googlevideo.com", "https://*.youtube.com"]
       }
     },
-    crossOriginEmbedderPolicy: false
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: { policy: "cross-origin" }
   })
 );
 
