@@ -20,23 +20,13 @@ const JWT_SECRET = process.env.JWT_SECRET || 'badtameez_super_secret_key_2026';
 // 1. Performance Compression Middleware
 app.use(compression());
 
-// 2. Helmet HTTP Security Headers (Fine-tuned for media embeds)
+// 2. Helmet HTTP Security Headers (Permissive CSP & strict-origin-when-cross-origin for Media Players)
 app.use(
   helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", "https://www.youtube.com", "https://s.ytimg.com", "https://*.youtube.com"],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-        fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-        imgSrc: ["'self'", "data:", "blob:", "https:", "http:", "https://i.ytimg.com", "https://*.ytimg.com", "https://*.googleusercontent.com"],
-        frameSrc: ["'self'", "https://www.youtube.com", "https://www.youtube-nocookie.com", "https://*.youtube.com", "https://open.spotify.com"],
-        mediaSrc: ["'self'", "data:", "blob:", "https:"],
-        connectSrc: ["'self'", "https:", "https://*.googlevideo.com", "https://*.youtube.com"]
-      }
-    },
+    contentSecurityPolicy: false,
     crossOriginEmbedderPolicy: false,
-    crossOriginResourcePolicy: { policy: "cross-origin" }
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+    referrerPolicy: { policy: "strict-origin-when-cross-origin" }
   })
 );
 

@@ -212,19 +212,21 @@ class OfficialMusicEngine {
 
       return `
         <div class="track-item ${isPlayingCurrent ? 'playing' : ''}" onclick="window.creativeAudioEngine.selectTrack(${trackIdx})">
-          <div class="track-thumb">
-            <img src="${t.artwork || 'assets/images/song-shodh.jpg'}" alt="${t.title}">
-            <div class="track-play-overlay">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <div class="track-item-header">
+            <div class="track-thumb">
+              <img src="${t.artwork || 'assets/images/song-shodh.jpg'}" alt="${t.title}">
+              <div class="track-play-overlay">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
             </div>
-          </div>
-          <div class="track-details">
-            <h4 class="track-title">${t.title}</h4>
-            <p class="track-subtitle">
-              <span class="badge-${isYt ? 'yt-only' : isSp ? 'spotify-only' : 'both'}">${isYt ? 'YouTube' : isSp ? 'Spotify' : 'YouTube & Spotify'}</span>
-              ${t.genre || 'Single'} · ${t.duration || '03:20'}
-            </p>
-            <p class="track-description">${t.description || ''}</p>
+            <div class="track-details">
+              <h4 class="track-title">${t.title}</h4>
+              <p class="track-subtitle">
+                <span class="badge-${isYt ? 'yt-only' : isSp ? 'spotify-only' : 'both'}">${isYt ? 'YouTube' : isSp ? 'Spotify' : 'YouTube & Spotify'}</span>
+                ${t.genre || 'Single'} · ${t.duration || '03:20'}
+              </p>
+              <p class="track-description">${t.description || ''}</p>
+            </div>
           </div>
           <div class="track-links">
             <button class="track-ext-btn track-play-inline-btn" onclick="window.creativeAudioEngine.selectTrack(${trackIdx}); event.stopPropagation();" title="Play inside website player">
@@ -303,16 +305,17 @@ class OfficialMusicEngine {
     if (!this.videoEmbedContainer) return;
 
     if (track.youtubeId) {
-      // Embed YouTube
+      // Embed YouTube using Privacy-Enhanced Domain & Valid Referrer
       this.videoEmbedContainer.innerHTML = `
         <iframe 
           id="ytPlayerIframe"
           width="100%" 
           height="100%" 
-          src="https://www.youtube.com/embed/${track.youtubeId}?autoplay=${autoPlay ? 1 : 0}&rel=0&playsinline=1" 
+          src="https://www.youtube-nocookie.com/embed/${track.youtubeId}?autoplay=${autoPlay ? 1 : 0}&playsinline=1&rel=0" 
           title="${track.title} - Mahaveer Jain" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
           style="border-radius: var(--radius-md); width:100%; height:100%; border:0; display:block;"
         ></iframe>
@@ -675,19 +678,20 @@ window.openPoetryVideoModal = (youtubeId, title, category) => {
   if (!modalOverlay || !modalBody) return;
 
   modalBody.innerHTML = `
-    <div style="margin-bottom: 1rem;">
-      <span class="section-tag" style="margin-bottom: 0.25rem;">${category || 'Poetry Recital'}</span>
-      <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--gold-light);">${title}</h3>
-      <p style="color: var(--sepia-warm); font-size: 0.85rem;">Recited by Mahaveer Jain (@BadtameezMusic)</p>
+    <div style="margin-bottom: 1.25rem; text-align: center;">
+      <span class="section-tag" style="margin-bottom: 0.35rem;">${category || 'Poetry Recital'}</span>
+      <h3 style="font-family: var(--font-serif); font-size: clamp(1.4rem, 3.5vw, 1.85rem); color: var(--gold-light);">${title}</h3>
+      <p style="color: var(--sepia-warm); font-size: 0.85rem; margin-top: 0.35rem;">Recited by Mahaveer Jain (@BadtameezMusic)</p>
     </div>
-    <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: #000;">
+    <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.8);">
       <iframe 
         width="100%" 
         height="100%" 
-        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&playsinline=1" 
+        src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&playsinline=1" 
         title="${title} - Mahaveer Jain" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
         style="border:0; position: absolute; top:0; left:0; width:100%; height:100%;"
       ></iframe>

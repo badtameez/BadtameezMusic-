@@ -257,31 +257,65 @@ ${track.lyrics}
     document.body.style.overflow = "hidden";
   };
 
-  // Open Poem Detail Modal
-  window.openPoemModal = (poem, currentLang) => {
+  // Open Poem Detail Modal with Dynamic Language Switcher (Hinglish default)
+  window.openPoemModal = (poem, defaultLang = "roman") => {
     if (!poem) return;
-    const isHindi = currentLang === "hindi";
-    modalContainer.innerHTML = `
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <span style="font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold-primary); text-transform: uppercase;">${poem.theme}</span>
-        <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--text-primary); margin-top: 0.5rem;">${poem.titleHindi} / ${poem.titleRoman}</h2>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.75rem;">
-        <div style="background: rgba(10, 9, 8, 0.5); padding: 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--glass-border);">
-          <h4 style="font-family: var(--font-display); font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.75rem; letter-spacing: 0.1em;">DEVANAGARI (हिन्दी)</h4>
-          <p style="font-family: 'Rozha One', 'Noto Serif Devanagari', serif; font-size: 1.15rem; line-height: 1.8; color: var(--text-primary); white-space: pre-line;">${poem.linesHindi}</p>
+    
+    // Store current active state on window
+    window._activePoemModalData = {
+      poem: poem,
+      currentLang: defaultLang === "hindi" ? "hindi" : "roman"
+    };
+
+    const renderPoemContent = () => {
+      const isHindi = window._activePoemModalData.currentLang === "hindi";
+      const activeTitle = isHindi ? poem.titleHindi : (poem.titleRoman || poem.titleHindi);
+      const activeLines = isHindi ? poem.linesHindi : (poem.linesRoman || poem.linesHindi);
+      const activeFont = isHindi ? "'Rozha One', 'Noto Serif Devanagari', serif" : "var(--font-handwriting)";
+      const activeFontSize = isHindi ? "1.2rem" : "1.35rem";
+
+      modalContainer.innerHTML = `
+        <div style="text-align: center; margin-bottom: 1.25rem;">
+          <span style="font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.22em; color: var(--gold-primary); text-transform: uppercase; font-weight: 600;">${poem.theme || 'Kalam & Kagaz'}</span>
+          <h2 style="font-family: var(--font-serif); font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--text-primary); margin-top: 0.35rem; line-height: 1.2;">${activeTitle}</h2>
         </div>
-        <div style="background: rgba(10, 9, 8, 0.5); padding: 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--glass-border);">
-          <h4 style="font-family: var(--font-display); font-size: 0.75rem; color: var(--gold-primary); margin-bottom: 0.75rem; letter-spacing: 0.1em;">ROMANIZED (HINGLISH)</h4>
-          <p style="font-family: var(--font-handwriting); font-size: 1.35rem; line-height: 1.6; color: var(--text-primary); white-space: pre-line;">${poem.linesRoman}</p>
+
+        <!-- Language Switcher Pill Toggle -->
+        <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+          <div class="modal-lang-switcher">
+            <button class="modal-lang-btn ${!isHindi ? 'active' : ''}" onclick="window.setPoemModalLanguage('roman')">English / Hinglish</button>
+            <button class="modal-lang-btn ${isHindi ? 'active' : ''}" onclick="window.setPoemModalLanguage('hindi')">हिन्दी (Devanagari)</button>
+          </div>
         </div>
-      </div>
-      <div style="padding: 1.25rem; background: rgba(200, 169, 126, 0.05); border-left: 2px solid var(--gold-primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;">
-        <h5 style="font-size: 0.8rem; font-family: var(--font-display); color: var(--sepia-warm); letter-spacing: 0.1em; text-transform: uppercase;">English Poetic Essence</h5>
-        <p style="font-style: italic; color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.35rem;">"${poem.englishMeaning}"</p>
-        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>Notes:</strong> ${poem.notes}</p>
-      </div>
-    `;
+
+        <!-- Single Elegant Full-Width Verse Card -->
+        <div style="background: rgba(14, 12, 10, 0.7); padding: 1.75rem 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--glass-border); margin-bottom: 1.5rem; text-align: center; box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+          <p style="font-family: ${activeFont}; font-size: ${activeFontSize}; line-height: 1.8; color: var(--gold-light); white-space: pre-line; margin: 0;">${activeLines}</p>
+        </div>
+
+        ${poem.englishMeaning ? `
+          <div style="padding: 1.15rem 1.25rem; background: rgba(200, 169, 126, 0.06); border-left: 3px solid var(--gold-primary); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin-bottom: 1.5rem;">
+            <h5 style="font-size: 0.75rem; font-family: var(--font-display); color: var(--gold-primary); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.35rem;">Poetic Essence</h5>
+            <p style="font-style: italic; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin: 0;">"${poem.englishMeaning}"</p>
+            ${poem.notes ? `<p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;"><strong>Notes:</strong> ${poem.notes}</p>` : ''}
+          </div>
+        ` : ''}
+
+        <!-- Actions -->
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;" onclick="navigator.clipboard.writeText('${(activeLines || '').replace(/'/g, "\\'").replace(/\n/g, "\\n")} \\n\\n— Mahaveer Jain (@BadtameezMusic)').then(() => alert('📋 Verse copied to clipboard!'))">
+            <span>📋 Copy Verse</span>
+          </button>
+        </div>
+      `;
+    };
+
+    window.setPoemModalLanguage = (lang) => {
+      window._activePoemModalData.currentLang = lang;
+      renderPoemContent();
+    };
+
+    renderPoemContent();
     modalOverlay.classList.add("active");
     document.body.style.overflow = "hidden";
   };
