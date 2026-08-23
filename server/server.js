@@ -2,12 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const db = require('./db');
 const { sendInquiryAlert } = require('./email');
 
@@ -15,7 +17,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'badtameez_super_secret_key_2026';
 
-// 1. Helmet HTTP Security Headers (Fine-tuned for media embeds)
+// 1. Performance Compression Middleware
+app.use(compression());
+
+// 2. Helmet HTTP Security Headers (Fine-tuned for media embeds)
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -643,6 +648,17 @@ app.post('/api/admin/upload', authenticateJWT, upload.single('file'), (req, res)
   });
 });
 
+// Health Check Endpoint (For Cloud Monitors & Load Balancers)
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'healthy',
+    uptimeSeconds: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    database: db.isCloud ? 'MongoDB Atlas (Connected)' : 'Local File Store',
+    environment: process.env.NODE_ENV || 'production'
+  });
+});
+
 // Serve admin dashboard at /admin
 app.get('/admin', (req, res) => {
   res.sendFile(path.join(ROOT_DIR, 'admin.html'));
@@ -653,11 +669,36 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(ROOT_DIR, 'index.html'));
 });
 
+// Global 404 Handler for unmatched API routes
+app.use('/api/*', (req, res) => {
+  res.status(404).json({ error: 'API route not found' });
+});
+
 // Start Server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`🎵 BADTAMEEZ MUSIC FULL-STACK SERVER RUNNING`);
   console.log(`🌐 Public Website:   http://localhost:${PORT}`);
   console.log(`🛡️  Admin Dashboard:  http://localhost:${PORT}/admin`);
+  console.log(`🩺 Health Check:     http://localhost:${PORT}/api/health`);
   console.log(`====================================================`);
 });
+
+// Graceful Shutdown
+function gracefulShutdown(signal) {
+  console.log(`\n${signal} received. Closing HTTP server and database connections...`);
+  server.close(() => {
+    console.log('HTTP server closed.');
+    if (mongoose.connection && mongoose.connection.readyState === 1) {
+      mongoose.connection.close(false).then(() => {
+        console.log('MongoDB connection closed.');
+        process.exit(0);
+      });
+    } else {
+      process.exit(0);
+    }
+  });
+}
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
