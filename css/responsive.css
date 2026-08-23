@@ -256,40 +256,128 @@ html, body {
     gap: 1.25rem;
   }
 
-  /* --- Music & Discography --- */
+  /* --- Music & Discography (Tablets & Mobile <= 768px) --- */
+  .music-layout {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+    gap: 2.25rem;
+    box-sizing: border-box;
+  }
+
   .master-player-card {
-    padding: 1.25rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1.5rem 1.15rem;
+    box-sizing: border-box;
   }
 
   .player-artwork-wrap {
+    width: 100%;
     max-width: 100%;
+    margin: 0 auto 1.25rem;
+    aspect-ratio: 16 / 9;
+  }
+
+  .player-title {
+    font-size: 1.4rem;
+  }
+
+  .player-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+  }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .player-playback-group {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .volume-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .volume-slider {
+    width: 50px;
+  }
+
+  .ctrl-btn-play {
+    width: 48px;
+    height: 48px;
   }
 
   .discography-list {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
     gap: 0.85rem;
   }
 
   .track-item {
-    padding: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.75rem;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .track-item-header {
+    display: flex;
+    align-items: center;
     gap: 0.85rem;
-    flex-wrap: wrap;
+    width: 100%;
   }
 
   .track-thumb {
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     flex-shrink: 0;
   }
 
   .track-details {
     flex: 1;
-    min-width: 160px;
+    min-width: 0;
+  }
+
+  .track-title {
+    font-size: 1.05rem;
+  }
+
+  .track-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .track-description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-top: 0.25rem;
   }
 
   .track-links {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
-    margin-top: 0.4rem;
+    gap: 0.5rem;
+    width: 100%;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(200, 169, 126, 0.08);
   }
 
   /* --- Poetry & Recitals --- */
@@ -406,15 +494,26 @@ html, body {
     max-height: 90vh;
   }
 
-  .track-item {
-    flex-direction: column;
-    align-items: flex-start;
+  .master-player-card {
+    padding: 1.25rem 0.85rem !important;
+    border-radius: var(--radius-md);
   }
 
-  .track-item-header {
-    display: flex;
-    gap: 0.85rem;
-    width: 100%;
+  .player-controls {
+    gap: 0.25rem;
+  }
+
+  .player-playback-group {
+    gap: 0.4rem;
+  }
+
+  .volume-slider {
+    width: 42px;
+  }
+
+  .ctrl-btn-play {
+    width: 44px;
+    height: 44px;
   }
 
   .toast-notification {
