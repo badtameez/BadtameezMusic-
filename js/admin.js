@@ -1182,9 +1182,9 @@ class AdminApp {
           <td><strong style="color: var(--text-primary);">${m.name}</strong></td>
           <td><a href="mailto:${m.email}" style="color: var(--gold-primary); text-decoration: none;">${m.email}</a></td>
           <td><span class="badge-status both">${m.service}</span></td>
-          <td style="max-width: 320px; font-size: 0.85rem; color: var(--text-secondary);">${m.message}</td>
+          <td style="max-width: 320px; font-size: 0.85rem; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${m.message}</td>
           <td style="text-align: right;">
-            ${!m.isRead ? `<button class="btn-action-icon" title="Mark Read" onclick="window.adminApp.markMsgRead(${m.id})">👁️</button>` : ''}
+            <button class="btn-action-icon" title="View Full Message" onclick="window.adminApp.viewMessageModal(${m.id})">👁️</button>
             <button class="btn-action-icon danger" title="Delete Message" onclick="window.adminApp.deleteMessage(${m.id})">🗑️</button>
           </td>
         </tr>
@@ -1192,6 +1192,53 @@ class AdminApp {
     } catch (e) {
       console.error('Failed to load messages:', e);
     }
+  }
+
+  async viewMessageModal(id) {
+    const messages = await this.apiRequest('/api/admin/messages');
+    const msg = (messages || []).find(m => m.id === id);
+    if (!msg) return;
+
+    // Automatically mark as read if not yet read
+    if (!msg.isRead) {
+      await this.apiRequest(`/api/admin/messages/${id}/read`, { method: 'PUT' });
+      this.loadMessages();
+    }
+
+    this.modalTitle.textContent = `Inquiry: ${msg.name}`;
+    this.modalBody.innerHTML = `
+      <div style="font-family: var(--font-sans);">
+        <div style="background: rgba(200, 169, 126, 0.08); border-left: 4px solid var(--gold-primary); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+            <div>
+              <strong style="font-size: 1.15rem; color: var(--text-primary);">${msg.name}</strong>
+              <div style="font-size: 0.85rem; color: var(--gold-light); margin-top: 0.2rem;">
+                <a href="mailto:${msg.email}" style="color: inherit; text-decoration: underline;">${msg.email}</a>
+              </div>
+            </div>
+            <span class="badge-status both" style="font-size: 0.8rem; padding: 0.25rem 0.65rem;">${msg.service}</span>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+            Submitted: ${new Date(msg.timestamp).toLocaleString()}
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message Content</label>
+          <div style="background: rgba(14, 12, 10, 0.8); border: 1px solid var(--glass-border); border-radius: var(--radius-sm); padding: 1.25rem; font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); white-space: pre-wrap; max-height: 280px; overflow-y: auto;">
+${msg.message}
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <a href="mailto:${msg.email}?subject=Re: Creative Collaboration / Badtameez Music" class="btn-save" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <span>✉️ Reply to ${msg.name}</span>
+          </a>
+        </div>
+      </div>
+    `;
+
+    this.openModal();
   }
 
   async markMsgRead(id) {
